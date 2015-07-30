@@ -8,6 +8,12 @@ Rails.application.routes.draw do
     resources :comments, :only => [:create, :destroy]
   end
 
+  resources :missions do
+    resources :mission_posts, only: [:create, :destroy] do
+      resources :comments, only: [:create, :destroy]
+    end
+  end
+
   resources :funds
 
   resources :events
