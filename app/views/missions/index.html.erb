@@ -1,0 +1,145 @@
+<div class="">
+  <h3>Mission
+    <span>(noun)</span>
+  </h3>
+  <ul>
+    <li>An important assignment given to a person or group of people</li>
+    <li>A strongly felt aim, ambition, or calling</li>
+  </ul>
+  <div class="col-md-6 event-search" style="postion:absolute;right:-15px; top:-120px;">
+    <div class="input-group">
+      <input class="form-control" placeholder="Search for Missions" type="text">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button">
+          <i class="fa fa-search"></i>
+        </button>
+      </span>
+    </div>
+<!-- /input-group -->
+  </div>
+<!-- /.col-lg-6 -->
+  <div class="mission-header col-md-12">
+    <a class="featured-mission">Featured Mission</a>
+    <a class="featured-mission-more">Learn More about our Featured Missions</a>
+    <div class="mission-header-content">
+      <h2><%= @featured.name %></h2>
+      <p><%= @featured.description %></p>
+      <a href="app.example-mission.html" class="btn btn-mission-main">Learn More</a>
+    </div>
+  </div>
+
+  <div class="row main-missions" style="">
+    <% @missions.each do |mission| %>
+    <div class="col-md-6">
+      <div class="sub-mission mission-one">
+        <div class="sub-mission-content">
+         <h2><%= mission.name %></h2>
+          <p><%= mission.description %></p>
+          <a class="btn btn-mission-main">Learn More</a>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+
+  <div class="row p-missions">
+    <div class="p-mission-intro">
+      <h4>Private Missions</h4>
+      <p>Connect with employees and supporters of your organisation through Private Missions, you can learn more <a href="#" target="_blank">here</a></p>
+      <a href="#" class="btn btn-start-mission" data-toggle="modal" data-target="#missionModal">Start A Private Mission</a>
+    </div>
+    <div class="col-md-3">
+      <div class="p-mission-single one">
+        <div class="content">
+          <h4>Campfire</h4>
+          <a class="btn-learn btn">Learn More</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="p-mission-single two">
+        <div class="content">
+          <h4>Campfire</h4>
+          <a class="btn-learn btn">Learn More</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="p-mission-single three">
+        <div class="content">
+          <h4>Campfire</h4>
+          <a class="btn-learn btn">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+<!-- Start A Mission Modal -->
+<div aria-hidden="true" aria-labelledby="myModalLabel" class="modal mission-modal fade" id="missionModal" role="dialog" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="mission-modal-header ">
+        <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">Start Your Own Mission</h4>
+      </div>
+      <div class="modal-body">
+        <p style="padding:16px 0;">So, tell us about your mission...</p>
+
+        <form>
+
+          <input class="form-control" placeholder="Who are you running the mission for? Type it here">
+
+          <div class="form-group">
+            <div class="col-md-12">
+              <p style="padding:20px 0 5px 0;">Are you a representative from the organisation the mission is for?</p>
+            </div>
+            <div class="col-md-8" style="padding-bottom:20px;">
+              <div class="radio">
+                <label for="radios-0">
+                  <input checked="checked" id="radios-0" name="radios" type="radio" value="1">
+                  Yes
+                </label>
+              </div>
+              <div class="radio">
+                <label for="radios-1">
+                  <input id="radios-1" name="radios" type="radio" value="2">
+                  No
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <textarea class="form-control" placeholder="Tell us breifly about your mission. What would you like to achieve?"></textarea>
+
+          <p style="padding:20px 0;">Now we're going to set 3 key objectives and achievable dates, don't worry if you haven't thought about these yet, you can add them later.</p>
+
+          <input class="form-control" placeholder="Objective One">
+
+          <input class="form-control" placeholder="Objective Two">
+
+          <input class="form-control" placeholder="Objective Three">
+
+          <p>Who would you like to add to your mission?</p>
+
+          <input class="form-control" placeholder="Search for names" type="search">
+
+          <div class="modal-team">
+
+            <img src="/img/douglas-profile.JPG"><img src="/img/douglas-profile.JPG"><img src="/img/douglas-profile.JPG"><img src="/img/douglas-profile.JPG"><img src="/img/douglas-profile.JPG"><img src="/img/douglas-profile.JPG">
+          </div>
+
+        </form>
+      </div>
+      <div class="modal-footer">
+
+        <button class="btn btn-signup" style="display:block;margin-left:auto;margin-right:auto;" type="button">Start Mission</button>
+      </div>
+    </div>
+  </div>
+</div>
