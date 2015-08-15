@@ -19,3 +19,6 @@
 
 # Don't store all of the uploaded images in source control. BAD
 public/system
+
+# Diagrams are nice, but pdfs in source control are not!
+erd.pdf
